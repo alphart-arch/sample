@@ -1,30 +1,38 @@
 <h1>Registration</h1>
 
 <form action="/student/contact" method="POST">
-
-    <label for="">
-        Name:
-        <input type="text" name="name">
-    </label>
-    <label for="">
-        Email:
-        <input type="text" name="email">
-    </label>
-    <label>
-        Age:
-        <input type="number" name="age">
-    </label>
-    <label>
-        DOB:
-        <input type="date" name="dob">
-    </label>
-    <label>
-        Address:
-        <input type="text" name="address">
-    </label>
-    <label>
-        <input type="submit">
-    </label>
+<table>
+<tbody>
+    <tr>
+        <label for="">
+        <td>Name:</td>
+        <td><input type="text" name="name"></td>
+    </label></tr>
+    <tr>
+        <label for="">
+        <td>Email:</td>
+        <td><input type="text" name="email"></td>
+    </label></tr>
+    <tr>
+        <label for="">
+        <td>Age:</td>
+        <td><input type="number" name="age"></td>
+    </label></tr>
+    <tr>
+        <label for="">
+        <td>DOB:</td>
+        <td><input type="date" name="dob"></td>
+    </label></tr>
+    <tr><label for="">
+        <td>Address:</td>
+        <td><input type="text" name="address"></td>
+    </label></tr>
+    <tr><label for="">
+        <td><input type="submit"></td>
+        <td><input type="checkbox">show list</td>
+    </label></tr>
+</tbody>
+</table>
 </form>
 
 <style>

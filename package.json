@@ -24,6 +24,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@prisma/client": "^3.5.0"
+    "@prisma/client": "^3.5.0",
+    "svelte-table": "^0.3.4"
   }
 }

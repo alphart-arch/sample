@@ -1,7 +1,7 @@
 // Learn more about this file in the docs: https://pris.ly/d/prisma-schema
 datasource db {
   provider = "postgresql"
-  url = "postgresql://postgres:snlMeScIDts04d6z76af@containers-us-west-47.railway.app:6629/railway"
+  url = "postgresql://postgres:postgres@192.168.1.111/student"
  // postgresql://postgres:snlMeScIDts04d6z76af@containers-us-west-47.railway.app:6629/railway
 }
 
@@ -10,11 +10,13 @@ generator client {
   binaryTargets = ["native"]
 }
 
-model Todo {
+model student{
   uid String @id @default(cuid())
-  created_at DateTime
-  text String
-  done Boolean
+  name String
+  age Int
+  email String
+  dob DateTime
+  Address String
 }
 // env:
   //  DATABASE_URL: postgres://postgres:postgres@localhost/todos*/

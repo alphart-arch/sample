@@ -1,8 +1,10 @@
 /// <reference types="@sveltejs/kit" />
 
-type Todo = {
-  uid: string;
-  created_at: Date;
-  text: string;
-  done: boolean;
+type student = {
+  uid :String;
+  name :String;
+  age :Int;
+  email: String;
+  dob :String;
+  address :String;
 }
