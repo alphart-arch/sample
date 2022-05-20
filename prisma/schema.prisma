@@ -1,0 +1,22 @@
+// Learn more about this file in the docs: https://pris.ly/d/prisma-schema
+datasource db {
+  provider = "postgresql"
+  url = "postgresql://postgres:snlMeScIDts04d6z76af@containers-us-west-47.railway.app:6629/railway"
+ // postgresql://postgres:snlMeScIDts04d6z76af@containers-us-west-47.railway.app:6629/railway
+}
+
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native"]
+}
+
+model Todo {
+  uid String @id @default(cuid())
+  created_at DateTime
+  text String
+  done Boolean
+}
+// env:
+  //  DATABASE_URL: postgres://postgres:postgres@localhost/todos*/
+  //shadowDatabaseUrl ="postgres://postgres:postgres@192.168.1.111/todos"
+  //postgresql://postgres:postgres@192.168.1.111/todos
