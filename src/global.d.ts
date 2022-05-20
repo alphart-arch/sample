@@ -8,3 +8,6 @@ type student = {
   dob :String;
   address :String;
 }
+
+
+console.log(student);

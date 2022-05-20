@@ -1,3 +1,13 @@
+<script>
+// @ts-nocheck
+
+    import { each } from "svelte/internal";
+import Listing from "./list.svelte"
+import { students } from "./student/contact";
+    let yes=false;
+    let stud= students;
+    console.log("stud",stud);
+</script>
 <h1>Registration</h1>
 
 <form action="/student/contact" method="POST">
@@ -29,15 +39,24 @@
     </label></tr>
     <tr><label for="">
         <td><input type="submit"></td>
-        <td><input type="checkbox">show list</td>
+        <td><input type="checkbox" bind:checked={yes}>show list</td>
     </label></tr>
 </tbody>
 </table>
 </form>
-
+{#if yes}
+<div>
+<Listing {stud}/>
+</div>
+{/if}
 <style>
     label{
+        align-content: center;
         display: block;
         margin-bottom: 20px;
+    }
+    table{
+        align-items: center;
+
     }
 </style>
