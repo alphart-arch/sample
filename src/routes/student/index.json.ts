@@ -1,6 +1,7 @@
 //import { api } from "./_api";
+import type { RequestHandler } from "@sveltejs/kit";
 
-export let students :student[]= [];
+export let  students :student[]=[];
 
 export const get = (request) =>{
     
@@ -8,38 +9,34 @@ export const get = (request) =>{
     return{
         status:200,
         body:students
-    }
 
     
 }
-export const post = (request) =>{
+}
+export const post:RequestHandler<{}, FormData> = (request) =>{
     const name=request.body.get("name");
     const email=request.body.get("email");
     const age=request.body.get("age");
     const dob=request.body.get("dob");
     const address=request.body.get("address");
-    /*return api(request, {
-        name:name,
-        email:email,
-        age:age,
-        dob:dob,
-        address:address
-    })*/
-    students.push(
-        name,
-        age,
-        email,
-        dob,
-        address
-    );
+    students.push({
+        name,age,email,dob,address
+    });
+    console.log("students",students)
+    
+    
     return{
         status:303,
+        students,
         headers:{
-            location:"/"
+            location:"/",
         }
+        
+        //body:students
     };
+    
 };
-console.log("students",students)
+
 /*return api(request, {
     created_at: new Date(),
     text: request.body.get("text"),
