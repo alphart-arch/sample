@@ -75,11 +75,26 @@
   >
 </form>
 {#if yes}
-  <div>
-    {#each students as stud}
-      <Listing />
-    {/each}
-  </div>
+  <center>
+    <table class="content-table buyside">
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>DOB</th>
+      </tr>
+      {#each students as data}
+        <tr>
+          <td>{data.name}</td>
+          <td>{data.age}</td>
+          <td>{data.email}</td>
+          <td>{data.address}</td>
+          <td>{data.dob}</td>
+        </tr>`
+      {/each}
+    </table></center
+  >
 {/if}
 
 <style>
